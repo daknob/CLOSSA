@@ -2,7 +2,7 @@
 #coding=utf8
 import argparse, os, sys, random, codecs
 
-Config = argparse.ArgumentParser(prog="clossa", description="The CLOSSA Compiler", epilog="Free Software in Public Domain")
+Config = argparse.ArgumentParser(prog="clossa", description="The CLOSSA Compiler", epilog="Licensed under modified NPOSL-3.0")
 Config.add_argument("-o", "--out", action="append", nargs=1, help="Name of the output file")
 Config.add_argument("-ansi", "--ansi", action="store_true", help="Follow the CLOSSA ANSI strict rules")
 Config.add_argument("-p", "-pedantic", action="store_true", help="Follow the strict ISO CLOSSA")
