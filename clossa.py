@@ -42,7 +42,6 @@ Board = {
 	"ΜΗ_ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "unsigned",
 	"ΕΞΩΤΕΡΙΚΟ" : "extern",
 
-
 	#	User-Created Functions
 	"ΚΥΡΙΑ": "main",
 		
@@ -59,11 +58,6 @@ Board = {
 	"ΓΡΑΨΕ_ΧΑΡΑΚΤΗΡΑ": "putc",
 	"ΤΕTΡΙ": "sqrt",
 	"ΔΥΝ" : "pow",
-	"ΑΝΤΣΥΜ" : "strcpy",
-	"ΑΝΤΜΝΗ" : "memcpy",
-	"ΣΥΓΚΣΥΜ" : "strcmp",
-	"ΣΥΓΚΜΝΗ" : "memcmp"
-
 	
 	#	Preprocessor	
 	"ΕΙΣΑΓΩΓΗ": "include",
@@ -89,9 +83,19 @@ Board = {
 	"ΕΠΕΣΤΡΕΨΕ": "return",
 	"ΠΑΝΕ_ΣΤΟ": "goto",
 
+	#	string.h
+	"ΣΥΓΚΜΝΗ" : "memcmp",
+	"ΑΝΤΣΥΜ" : "strcpy",
+	"ΣΥΓΚΡΣΥΜ" : "strcmp",
+	"ΕΝΩΣΗΣΥΜ" : "strcat",
+	"ΔΙΑΧΣΥΜ" : "strtok",
+	"ΑΝΑΖΣΥΜ" : "strstr",
+
+
 	#	Libraries
 	"ΒΑΣΒΙΒ": "stdlib.h",
 	"ΣΥΜΒΟΛΟΣΕΙΡΑ": "string.h",
 	"ΒΑΣΕΟ": "stdio.h"
+
 }
 
