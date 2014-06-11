@@ -29,6 +29,7 @@ if(Config.w == True):
 	SynthCommand += "-Werror "
 
 Board = {
+	#	Variables
 	"ΑΚΕΡΑΙΟΣ": "int",
 	"ΠΡΑΓΜΑΤΙΚΟΣ": "double",
 	"ΧΑΡΑΚΤΗΡΑΣ": "char",
@@ -39,9 +40,13 @@ Board = {
 	"ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "signed",
 	"ΜΕΓΑΛΟΣ": "long",
 	"ΜΗ_ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "unsigned",
+	"ΕΞΩΤΕΡΙΚΟ" : "extern",
 
+
+	#	User-Created Functions
 	"ΚΥΡΙΑ": "main",
-	
+		
+	#	Built-in Functions
 	"ΕΚΤΥΠΩΣΕ": "printf",
 	"ΔΙΑΒΑΣΕ": "scanf",
 	"ΔΙΑΘΕΣΕ": "malloc",
@@ -59,14 +64,13 @@ Board = {
 	"ΣΥΓΚΣΥΜ" : "strcmp",
 	"ΣΥΓΚΜΝΗ" : "memcmp"
 
-
-	"ΕΠΕΣΤΡΕΨΕ": "return",
-
+	
+	#	Preprocessor	
 	"ΕΙΣΑΓΩΓΗ": "include",
 	"ΟΡΙΣΜΟΣ": "define",
 	"ΟΡΙΣΜΟΣ_ΤΥΠΟΥ": "typedef",
-	"ΕΞΩΤΕΡΙΚΟ" : "extern",
-	
+		
+	#	Defines
 	"\\Ν": "\\n",
 	"ΤΑ": "EOF",
 	"ΤΙΠΟΤΑ": "NULL",
@@ -74,6 +78,7 @@ Board = {
 	"ΒΑΣΕΞΟΔ": "stdout",
 	"ΒΑΣΛΑΘΟΣ": "stderr",
 
+	#	Control Flow Manipulation
 	"ΑΝ": "if",
 	"ΟΣΟ": "while",
 	"ΚΑΝΕ": "do",
@@ -81,7 +86,10 @@ Board = {
 	"ΑΛΛΙΩΣ_ΑΝ": "else if",
 	"ΣΤΑΜΑΤΑ": "break",
 	"ΣΥΝΕΧΙΣΕ": "continue",
+	"ΕΠΕΣΤΡΕΨΕ": "return",
+	"ΠΑΝΕ_ΣΤΟ": "goto",
 
+	#	Libraries
 	"ΒΑΣΒΙΒ": "stdlib.h",
 	"ΣΥΜΒΟΛΟΣΕΙΡΑ": "string.h",
 	"ΒΑΣΕΟ": "stdio.h"
