@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding=utf8
-import argparse, os
+import argparse, os, sys, random, codecs
 
 Config = argparse.ArgumentParser(prog="clossa", description="The CLOSSA Compiler", epilog="Free Software in Public Domain")
 Config.add_argument("-o", "--out", action="append", nargs=1, help="Name of the output file")
@@ -18,7 +18,6 @@ if(len(Config.filename) != 1):
 if(Config.filename[0][::-1][0:4] != "olc."):
 	print("You can only compile a CLOSSA (.clo) file.")
 	exit(8)
-SynthCommand += Config.filename[0] + " "
 if(Config.out == True):
 	SynthCommand += "-o " + Config.out + " "
 if(Config.ansi == True):
@@ -30,72 +29,86 @@ if(Config.w == True):
 
 Board = {
 	#	Variables
-	"ΑΚΕΡΑΙΟΣ": "int",
-	"ΠΡΑΓΜΑΤΙΚΟΣ": "double",
-	"ΧΑΡΑΚΤΗΡΑΣ": "char",
-	"ΔΟΜΗΜΑ": "struct",
-	"ΕΝΩΣΗ": "union",
-	"ΑΡΧΕΙΟ": "FILE",
-	"ΚΕΝΟ": "void",
-	"ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "signed",
-	"ΜΕΓΑΛΟΣ": "long",
-	"ΜΗ_ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "unsigned",
-	"ΕΞΩΤΕΡΙΚΟ" : "extern",
+	u"ΑΚΕΡΑΙΟΣ": "int",
+	u"ΠΡΑΓΜΑΤΙΚΟΣ": "double",
+	u"ΧΑΡΑΚΤΗΡΑΣ": "char",
+	u"ΔΟΜΗΜΑ": "struct",
+	u"ΕΝΩΣΗ": "union",
+	u"ΑΡΧΕΙΟ": "FILE",
+	u"ΚΕΝΟ": "void",
+	u"ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "signed",
+	u"ΜΕΓΑΛΟΣ": "long",
+	u"ΜΗ_ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "unsigned",
+	u"ΕΞΩΤΕΡΙΚΟ" : "extern",
 
 	#	User-Created Functions
-	"ΚΥΡΙΑ": "main",
+	u"ΚΥΡΙΑ": "main",
 		
 	#	Built-in Functions
-	"ΕΚΤΥΠΩΣΕ": "printf",
-	"ΔΙΑΒΑΣΕ": "scanf",
-	"ΔΙΑΘΕΣΕ": "malloc",
-	"ΕΛΕΥΘΕΡΩΣΕ": "free",
-	"ΕΠΑΝΑΔΙΑΘΕΣΕ": "realloc",
-	"ΚΑΘΑΡΑ_ΔΙΑΘΕΣΕ": "calloc",
-	"ΔΙΑΒΑΣΕ_ΑΡΧΕΙΟ": "fgets",
-	"ΓΡΑΨΕ_ΑΡΧΕΙΟ": "fputs",
-	"ΔΙΑΒΑΣΕ_ΧΑΡΑΚΤΗΡΑ": "getc",
-	"ΓΡΑΨΕ_ΧΑΡΑΚΤΗΡΑ": "putc",
-	"ΤΕTΡΙ": "sqrt",
-	"ΔΥΝ" : "pow",
+	u"ΕΚΤΥΠΩΣΕ": "printf",
+	u"ΔΙΑΒΑΣΕ": "scanf",
+	u"ΔΙΑΘΕΣΕ": "malloc",
+	u"ΕΛΕΥΘΕΡΩΣΕ": "free",
+	u"ΕΠΑΝΑΔΙΑΘΕΣΕ": "realloc",
+	u"ΚΑΘΑΡΑ_ΔΙΑΘΕΣΕ": "calloc",
+	u"ΔΙΑΒΑΣΕ_ΑΡΧΕΙΟ": "fgets",
+	u"ΓΡΑΨΕ_ΑΡΧΕΙΟ": "fputs",
+	u"ΔΙΑΒΑΣΕ_ΧΑΡΑΚΤΗΡΑ": "getc",
+	u"ΓΡΑΨΕ_ΧΑΡΑΚΤΗΡΑ": "putc",
+	u"ΤΕTΡΙ": "sqrt",
+	u"ΔΥΝ" : "pow",
 	
 	#	Preprocessor	
-	"ΕΙΣΑΓΩΓΗ": "include",
-	"ΟΡΙΣΜΟΣ": "define",
-	"ΟΡΙΣΜΟΣ_ΤΥΠΟΥ": "typedef",
+	u"ΕΙΣΑΓΩΓΗ": "include",
+	u"ΟΡΙΣΜΟΣ": "define",
+	u"ΟΡΙΣΜΟΣ_ΤΥΠΟΥ": "typedef",
 		
 	#	Defines
-	"\\Ν": "\\n",
-	"ΤΑ": "EOF",
-	"ΤΙΠΟΤΑ": "NULL",
-	"ΒΑΣΕΙΣ": "stdin",
-	"ΒΑΣΕΞΟΔ": "stdout",
-	"ΒΑΣΛΑΘΟΣ": "stderr",
+	u"\\Ν": "\\n",
+	u"ΤΑ": "EOF",
+	u"ΤΙΠΟΤΑ": "NULL",
+	u"ΒΑΣΕΙΣ": "stdin",
+	u"ΒΑΣΕΞΟΔ": "stdout",
+	u"ΒΑΣΛΑΘΟΣ": "stderr",
 
 	#	Control Flow Manipulation
-	"ΑΝ": "if",
-	"ΟΣΟ": "while",
-	"ΚΑΝΕ": "do",
-	"ΑΛΛΙΩΣ": "else",
-	"ΑΛΛΙΩΣ_ΑΝ": "else if",
-	"ΣΤΑΜΑΤΑ": "break",
-	"ΣΥΝΕΧΙΣΕ": "continue",
-	"ΕΠΕΣΤΡΕΨΕ": "return",
-	"ΠΑΝΕ_ΣΤΟ": "goto",
+	u"ΑΝ": "if",
+	u"ΟΣΟ": "while",
+	u"ΚΑΝΕ": "do",
+	u"ΑΛΛΙΩΣ": "else",
+	u"ΑΛΛΙΩΣ_ΑΝ": "else if",
+	u"ΣΤΑΜΑΤΑ": "break",
+	u"ΣΥΝΕΧΙΣΕ": "continue",
+	u"ΕΠΕΣΤΡΕΨΕ": "return",
+	u"ΠΑΝΕ_ΣΤΟ": "goto",
 
 	#	string.h
-	"ΣΥΓΚΜΝΗ" : "memcmp",
-	"ΑΝΤΣΥΜ" : "strcpy",
-	"ΣΥΓΚΡΣΥΜ" : "strcmp",
-	"ΕΝΩΣΗΣΥΜ" : "strcat",
-	"ΔΙΑΧΣΥΜ" : "strtok",
-	"ΑΝΑΖΣΥΜ" : "strstr",
-
-
+	u"ΣΥΓΚΜΝΗ" : "memcmp",
+	u"ΑΝΤΣΥΜ" : "strcpy",
+	u"ΣΥΓΚΡΣΥΜ" : "strcmp",
+	u"ΕΝΩΣΗΣΥΜ" : "strcat",
+	u"ΔΙΑΧΣΥΜ" : "strtok",
+	u"ΑΝΑΖΣΥΜ" : "strstr",
+    
 	#	Libraries
-	"ΒΑΣΒΙΒ": "stdlib.h",
-	"ΣΥΜΒΟΛΟΣΕΙΡΑ": "string.h",
-	"ΒΑΣΕΟ": "stdio.h"
+	u"ΒΑΣΒΙΒ": "stdlib.h",
+	u"ΣΥΜΒΟΛΟΣΕΙΡΑ": "string.h",
+	u"ΒΑΣΕΟ": "stdio.h"
 
 }
 
+try:
+    sourcefile = codecs.open(Config.filename[0], "r", encoding="utf-8")
+    sourcecode = sourcefile.read()
+    for greek in Board:
+    	sourcecode = sourcecode.replace(greek, Board[greek])
+    tempname = str(random.randint(1,999999999999)) + ".c"
+    tempfile = codecs.open(tempname, "w+", encoding="utf-8")
+    tempfile.write(sourcecode)
+    tempfile.close()
+    sourcefile.close()
+    SynthCommand += tempname
+    os.system(SynthCommand)
+    os.remove(tempname)
+except:
+    print "An error occured while reading / writing to files."
