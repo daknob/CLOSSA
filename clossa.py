@@ -60,6 +60,8 @@ Board = {
 	u"ΤΕTΡΑΓΩΝΙΚΗ_ΡΙΖΑ": "sqrt",
 	u"ΔΥΝΑΜΗ" : "pow",
 	u"ΜΕΓΕΘΟΣ_ΤΟΥ": "sizeof",
+	u"ΞΕΚΙΝΑ_ΤΥΧΗ": "srand",
+	u"ΤΥΧΑΙΟΣ_ΑΡΙΘΜΟΣ": "rand",
 	
 	#	Preprocessor	
 	u"ΕΙΣΑΓΩΓΗ": "include",
