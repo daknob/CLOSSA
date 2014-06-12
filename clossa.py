@@ -76,6 +76,7 @@ Board = {
 	u"%Χ": "%c",
 	u"%Σ": "%s",
 	u"%Μ": "%p",
+    u"ΠΡΟΕΠΙΛΟΓΗ": "default",
 
 	#	Control Flow Manipulation
 	u"ΑΝ": "if",
@@ -87,6 +88,8 @@ Board = {
 	u"ΣΥΝΕΧΙΣΕ": "continue",
 	u"ΕΠΕΣΤΡΕΨΕ": "return",
 	u"ΠΑΝΕ_ΣΤΟ": "goto",
+    u"ΔΙΑΚΟΠΤΗΣ": "switch",
+    u"ΠΕΡΙΠΤΩΣΗ": "case",
 
 	#	string.h
 	u"ΣΥΓΚΡΙΣΗ_ΜΝΗΜΗΣ" : "memcmp",
