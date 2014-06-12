@@ -3,7 +3,7 @@ CLOSSA, or in Greek "CΛΩΣΣΑ" is a C-based language suitable for teaching hi
 <br/>
 <h3>Usage:</h3>
 
-'''
+```
 $ clossa -h
 usage: clossa [-h] [-o OUT] [-ansi] [-p] [-w] code.clo
 
@@ -21,7 +21,7 @@ optional arguments:
 
 Licensed under modified NPOSL-3.0
 $
-'''
+```
 
 <br/>
 <h4>Caveats:</h4>
