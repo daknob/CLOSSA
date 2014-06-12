@@ -39,6 +39,9 @@ Board = {
 	u"ΜΕΓΑΛΟΣ": "long",
 	u"ΜΗ_ΠΡΟΣΗΜΑΣΜΕΝΟΣ": "unsigned",
 	u"ΕΞΩΤΕΡΙΚΟ" : "extern",
+	u"ΑΣΤΑΘΗΣ": "volatile",
+	u"ΣΤΑΤΙΚΟΣ": "static",
+	u"ΣΤΑΘΕΡΟΣ": "const",
 
 	#	User-Created Functions
 	u"ΑΡΧΙΚΗ": "main",
