@@ -1,5 +1,5 @@
 <h3>The CLOSSA Compiler</h3>
-CLOSSA, or in Greek "CΛΩΣΣΑ" is a C-based language suitable for teaching high school students programming. It is designed to replace the current "ΓΛΩΣΣΑ" being taught by adding more power yet maintaining a Greek enviroment for the students to work on. It is not type-safe like ΓΛΩΣΣΑ but adds way more capabilities to the hands of the developers. Although it is not yet documented, we are working on making this compiler work and documentation will follow afterwards. It is obviously not a trolling attempt. The language supports integers, doubles, longs, characters -all signed or unsigned, structs and even external libraries. Some could argue this is a badly translated version of C, although this is not the case, since this is actually using the same or similar translation patterns as the ΓΛΩΣΣΑ language.
+CLOSSA, or in Greek "CΛΩΣΣΑ" is a C-based language suitable for teaching high school students programming. It is designed to replace the current "ΓΛΩΣΣΑ" being taught by adding more power yet maintaining a Greek enviroment for the students to work on. It is not type-safe like ΓΛΩΣΣΑ but adds way more capabilities to the hands of the developers. Although it is not yet documented, we are working on making this compiler work and documentation will follow afterwards. It is obviously not a trolling attempt. The language supports integers, doubles, longs, characters -all signed or unsigned, structs and even external libraries. Some could argue this is a badly translated version of C, although this is not the case, since this is actually using the same or similar translation patterns as the ΓΛΩΣΣΑ language. With CΛΩΣΣΑ you can do much more than with the original ΓΛΩΣΣΑ, and most importantly it compiles and runs on actual computers. You can create from a simple Hello World program to a fully featured driver for the hardware of your choice.
 <br/>
 <h3>Usage:</h3>
 
@@ -24,5 +24,4 @@ $
 ```
 
 <br/>
-<h4>Caveats:</h4>
-Currently all strings used must be in English, as well as all variable and function names. 
+
