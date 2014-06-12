@@ -74,6 +74,7 @@ Board = {
 	u"%Π": "%lf",
 	u"%Χ": "%c",
 	u"%Σ": "%s",
+	u"%Μ": "%p",
 
 	#	Control Flow Manipulation
 	u"ΑΝ": "if",
