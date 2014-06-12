@@ -11,15 +11,14 @@ Config.add_argument('filename', metavar='code.clo', nargs=1, help='The file to b
 Config = Config.parse_args()
 
 SynthCommand = "gcc "
-
 if(len(Config.filename) != 1):
 	print("You can only compile a single CLOSSA file.")
 	exit(9)
 if(Config.filename[0][::-1][0:4] != "olc."):
 	print("You can only compile a CLOSSA (.clo) file.")
 	exit(8)
-if(Config.out == True):
-	SynthCommand += "-o " + Config.out + " "
+if(len(Config.out[0]) == 1):
+	SynthCommand += "-o " + Config.out[0][0] + " "
 if(Config.ansi == True):
 	SynthCommand += "-ansi "
 if(Config.p == True):
@@ -42,7 +41,7 @@ Board = {
 	u"ΕΞΩΤΕΡΙΚΟ" : "extern",
 
 	#	User-Created Functions
-	u"ΚΥΡΙΑ": "main",
+	u"ΑΡΧΙΚΗ": "main",
 		
 	#	Built-in Functions
 	u"ΕΚΤΥΠΩΣΕ": "printf",
