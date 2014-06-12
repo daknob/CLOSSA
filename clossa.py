@@ -62,13 +62,18 @@ Board = {
 	u"ΟΡΙΣΜΟΣ": "define",
 	u"ΟΡΙΣΜΟΣ_ΤΥΠΟΥ": "typedef",
 		
-	#	Defines
+	#	Defines and Strings
 	u"\\Ν": "\\n",
 	u"ΤΑ": "EOF",
 	u"ΤΙΠΟΤΑ": "NULL",
 	u"ΒΑΣΕΙΣ": "stdin",
 	u"ΒΑΣΕΞΟΔ": "stdout",
 	u"ΒΑΣΛΑΘΟΣ": "stderr",
+	u"%Α": "%d",
+	u"%Δ": "%x",
+	u"%Π": "%lf",
+	u"%Χ": "%c",
+	u"%Σ": "%s",
 
 	#	Control Flow Manipulation
 	u"ΑΝ": "if",
