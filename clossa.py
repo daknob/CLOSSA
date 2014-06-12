@@ -17,7 +17,7 @@ if(len(Config.filename) != 1):
 if(Config.filename[0][::-1][0:4] != "olc."):
 	print("You can only compile a CLOSSA (.clo) file.")
 	exit(8)
-if(len(Config.out[0]) == 1):
+if(Config.out == True and len(Config.out[0]) == 1):
 	SynthCommand += "-o " + Config.out[0][0] + " "
 if(Config.ansi == True):
 	SynthCommand += "-ansi "
